@@ -1,0 +1,38 @@
+::-webkit-scrollbar {
+    width: 0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    text-indent: 2em;
+    color: #fff;
+}
+h1, h2, h3, h4 {
+    color: #fff;
+}
+
+.article {
+    width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 800px) {
+    .article {
+        width: 100%;
+    }
+}
+
+.article-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.article-p {
+    margin-bottom: 12px;
+}
