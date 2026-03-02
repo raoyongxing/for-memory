@@ -173,13 +173,9 @@ function formatTime(seconds) {
         </div>
     </main>
 </template>
-<style>
-body {
-    position: relative;
-    height: 100vh;
-    overflow: auto;
-    background-color: #0a0a0a;
-    color: #ffffff92;
+<style scoped>
+.song-root {
+    color: rgba(255, 255, 255, 0.676);
 }
 
 .song-item {

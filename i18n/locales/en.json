@@ -5,6 +5,11 @@
         "slogan": {
             "short": "Seek·Record·Connect",
             "long": "Seek the unseen, record existence, connect worlds"
+        },
+        "footer": {
+            "email": "Email",
+            "target": "Digital Memory Never Forget Association {pipe} A Thoughtful Association to Extend the Social Significance of Life",
+            "wexinScan": "Scan with Wechat"
         }
     },
     "index": {
@@ -22,9 +27,7 @@
             "diaryDesc": "The moonlight embraced by the mirror,a chill that mirrors my soul.",
             "share": "Connect Someone",
             "shareDesc": "AB IMO PECTORE ALL IS WELL"
-        },
-        "footer_target": "Digital Memory Never Forget Association {pipe} A Thoughtful Association to Extend the Social Significance of Life",
-        "weixin_mp_scan": "Scan with Wechat"
+        }
     },
     "voice": {
         "audio_previous": "Previous",

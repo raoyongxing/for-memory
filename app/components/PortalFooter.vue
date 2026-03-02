@@ -3,9 +3,13 @@
     <footer class="bg-white border-t border-border py-4">
         <div class="portal-footer">
             <div class="portal-footer__content">
-                <p>{{ $t('index.footer_target', { pipe: '|' }) }}</p>
+                <p>{{ $t('common.footer.target', { pipe: '|' }) }}</p>
                 <p class="beian-wrap mt-2 underline">
                     <a class="text-primary" href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2025136985号-1</a>
+                </p>
+                <p class="beian-wrap mt-2">
+                    {{ $t('common.footer.email') }}
+                    <a href="mailto:khufuliver@163.com" class="text-primary underline">khufuliver@163.com</a>
                 </p>
             </div>
             <div class="weixin-mp-container">
@@ -16,7 +20,7 @@
                     <img style="height: 129px;" src="~/assets/img/icon.svg" alt="数字痕迹" />
                 </div>
                 <br>
-                <span class="weixin-mp-desc">{{ $t('index.weixin_mp_scan') }}</span>
+                <span class="weixin-mp-desc">{{ $t('common.footer.wexinScan') }}</span>
             </div>
         </div>
     </footer>

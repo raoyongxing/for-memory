@@ -1,8 +1,7 @@
 <template>
+    <PortalHeader/>
     <div>
-        <div>
-            i am khufu memory share page
-        </div>
-        <PortalFooter />
+        i am khufu memory share page
     </div>
+    <PortalFooter />
 </template>

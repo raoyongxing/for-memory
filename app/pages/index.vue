@@ -1,16 +1,5 @@
 <template>
-    <header class="fixed top-0 left-0 right-0 h-16 bg-white z-50 border-b border-border">
-        <div class="container mx-auto px-4 md:px-6 h-full flex items-center justify-between">
-            <div class="font-bold text-4xl text-primary">{{ $t('common.title') }}</div>
-            <nav class="hidden md:flex space-x-8">
-                <NuxtLinkLocale to="/" class="nav-link text-secondary hover:text-primary transition-color active">{{ $t('common.home') }}</NuxtLinkLocale>
-                <LanguageSwitch />
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden text-secondary focus:outline-none">
-                <i class="fa fa-bars text-xl"></i>
-            </button>
-        </div>
-    </header>
+    <PortalHeader />
     <main>
         <section id="home">
             <!-- 首屏宣言 -->
@@ -18,32 +7,36 @@
                 <h1 class="text-3xl md:text-4xl font-medium text-primary mb-5 leading-relaxed">{{ $t('common.slogan.short') }}</h1>
                 <p class="text-tertiary max-w-2xl mx-auto mb-10">{{ $t('common.slogan.long') }}</p>
                 <a class="inline-block text-tertiary hover:text-primary transition-color">
-                    <Icon name="icons8:angle-down" class="animate-bounce" />
+                    <Icon name="fa7-solid:angle-down" class="animate-bounce" />
                 </a>
             </div>
             
             <!-- 想法展示区 -->
             <div id="ideas-section" class="container mx-auto px-4 md:px-6 py-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="idea-card p-5 rounded-md cursor-pointer" data-id="1">
+                    <div class="idea-card relative p-5 rounded-md cursor-pointer group overflow-hidden" data-id="1">
                         <h3 class="text-xl font-medium text-primary mb-3">{{ $t('index.nav.articales') }}</h3>
                         <p class="text-tertiary text-sm mb-4 line-clamp-3">{{ $t('index.nav.articalesDesc') }}</p>
                         <p class="text-lightgray text-xs">2025-01-15</p>
+                        <NuxtLinkLocale to="/articles/all" target="_blank" class="hidden group-hover:flex items-center justify-center w-1/3 h-full bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
                     </div>
-                    <div class="idea-card p-5 rounded-md cursor-pointer" data-id="2">
+                    <div class="idea-card relative p-5 rounded-md cursor-pointer group overflow-hidden" data-id="2">
                         <h3 class="text-xl font-medium text-primary mb-3">{{ $t('index.nav.diary') }}</h3>
                         <p class="text-tertiary text-sm mb-4 line-clamp-3">{{ $t('index.nav.diaryDesc') }}</p>
                         <p class="text-lightgray text-xs">2025-01-15</p>
+                        <NuxtLinkLocale to="/diary" class="hidden group-hover:flex items-center justify-center w-1/3 h-full leaidng- bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
                     </div>
-                    <div class="idea-card p-5 rounded-md cursor-pointer" data-id="3">
+                    <div class="idea-card relative p-5 rounded-md cursor-pointer group overflow-hidden" data-id="3">
                         <h3 class="text-xl font-medium text-primary mb-3">{{ $t('index.nav.voice') }}</h3>
                         <p class="text-tertiary text-sm mb-4 line-clamp-3">{{ $t('index.nav.voiceDesc') }}</p>
                         <p class="text-lightgray text-xs">2025-01-15</p>
+                        <NuxtLinkLocale to="/voice" class="hidden group-hover:flex items-center justify-center w-1/3 h-full leaidng- bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
                     </div>
-                    <div class="idea-card p-5 rounded-md cursor-pointer" data-id="4">
+                    <div class="idea-card relative p-5 rounded-md cursor-pointer group overflow-hidden" data-id="4">
                         <h3 class="text-xl font-medium text-primary mb-3">{{ $t('index.nav.share') }}</h3>
                         <p class="text-tertiary text-sm mb-4 line-clamp-3">{{ $t('index.nav.shareDesc') }}</p>
                         <p class="text-lightgray text-xs">2025-01-15</p>
+                        <NuxtLinkLocale to="/share" class="hidden group-hover:flex items-center justify-center w-1/3 h-full leaidng- bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
                     </div>
                 </div>
             </div>
@@ -51,7 +44,11 @@
     </main>
     <PortalFooter />
 </template>
-<style>
+<script setup>
+
+
+</script>
+<style scoped>
     /* 全局样式 */
     body {
         font-family: 'Inter', system-ui, sans-serif;

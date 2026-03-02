@@ -1,27 +1,23 @@
 <script setup>
-    const { locales, setLocale, locale }  = useI18n()
-
+    let toggle = ref(false)
 </script>
 <template>
-    <header class="glitch-header">
-        <h1 class="site-title">{{ $t('common.title') }}</h1>
+    <header class="sticky top-0 left-0 right-0 h-16 bg-white z-50 border-b border-border">
+        <div class="container mx-auto px-4 md:px-6 h-full flex items-center justify-between">
+            <div class="font-bold text-4xl text-primary">{{ $t('common.title') }}</div>
+            <nav class="hidden md:flex space-x-8">
+                <NuxtLinkLocale to="/" class="nav-link text-secondary hover:text-primary transition-color active">{{ $t('common.home') }}</NuxtLinkLocale>
+                <LanguageSwitch />
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-secondary focus:outline-none" @click="toggle = !toggle">
+                <Icon name="fa7-solid:bars" class="text-xl" />
+            </button>
+        </div>
     </header>
-    <select class="locale-select" @change="setLocale($event.target.value)">
-        <option v-for="item in locales" :key="item.code" :selected="item.code === locale" :value="item.code">{{ item.name }}</option>
-    </select>
+    <div id="mobile-menu" v-show="toggle" class="md:hidden bg-white border-t border-border">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+            <NuxtLinkLocale to="/" class="nav-link text-secondary hover:text-primary transition-color active">{{ $t('common.home') }}</NuxtLinkLocale>
+            <LanguageSwitch />
+        </div>
+    </div>
 </template>
-
-<style scoped>
-    .locale-select {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 0.5rem;
-        background-color: #000;
-        color: #fff;
-        font-size: 1rem;
-        cursor: pointer;
-    }
-</style>

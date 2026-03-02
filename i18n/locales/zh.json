@@ -5,6 +5,11 @@
         "slogan": {
             "short": "探索·记录·链接",
             "long": "探索未至之境，印刻生命痕迹，链接往来众生"
+        },
+        "footer": {
+            "email": "邮箱",
+            "target": "数字痕迹记忆不清协会 {pipe} 一个旨在延长生命社会意义长度的空想家协会",
+            "wexinScan": "微信扫一扫"
         }
     },
     "index": {
@@ -15,16 +20,14 @@
         "subtitle": "筑基期，爱下棋，凡三十余载不赢，遂弃棋学诗，七年得一句， 皆哂之",
         "nav": {
             "articales": "数字文集",
-            "articalesDesc": "你见过一朵花的花苞状态，想象过它的所有的美好可能，所以再也无法忍受它早早的枯萎凋零",
+            "articalesDesc": "你见过一朵花的花苞状态，想象过它的所有的美好可能，所以再也无法忍受它早早的枯萎凋零你见过一朵花的花苞状态，想象过它的所有的美好可能，所以再也无法忍受它早早的枯萎凋零",
             "voice": "TA•发声",
             "voiceDesc": "我该如何追问，最热烈青春",
             "diary": "朝花夕拾",
             "diaryDesc": "镜中载清辉，微凉如见我",
             "share": "自由链接",
             "shareDesc": "AB IMO PECTORE ALL IS WELL"
-        },
-        "footer_target": "数字痕迹记忆不清协会 {pipe} 一个旨在延长生命社会意义长度的空想家协会",
-        "weixin_mp_scan": "微信扫一扫"
+        }
     },
     "voice": {
         "audio_previous": "上一首",
