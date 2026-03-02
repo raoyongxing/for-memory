@@ -13,12 +13,16 @@
         "occupation_tags": "👨💻 Digital Content Creator {pipe} 🎑 Optimistic Moonlight Poet {pipe} 🎮 Metaverse Explorer",
         "mission": "Focusing on the fusion of cutting-edge technology and digital art, building new dimensions of the virtual world with code",
         "subtitle": "Foundation stage, loves chess, never won in over thirty years, abandoned chess for poetry, spent seven years to get one line, everyone laughed at it",
-        "nav_articles": "📚 Digital Collection",
-        "nav_gallery": "🎨 Visual Gallery",
-        "nav_share": "🚀 Creative Workshop",
-        "nav_arknights": "❤️ Arknights Fan",
-        "nav_diary": "🕰️ Memories Revisited",
-        "nav_voice": "TA•Voice",
+        "nav": {
+            "articales": "Digital Collection",
+            "articalesDesc": "You have seen a flower in its bud, imagined all the beauty it could hold—and now, you cannot bear to watch it fade and wither so soon.",
+            "voice": "TA•Voice",
+            "voiceDesc": "How shall I ask of time,of youth’s most fleeting flame?",
+            "diary": "Memories Revisited",
+            "diaryDesc": "The moonlight embraced by the mirror,a chill that mirrors my soul.",
+            "share": "Connect Someone",
+            "shareDesc": "AB IMO PECTORE ALL IS WELL"
+        },
         "footer_target": "Digital Memory Never Forget Association {pipe} A Thoughtful Association to Extend the Social Significance of Life",
         "weixin_mp_scan": "Scan with Wechat"
     },

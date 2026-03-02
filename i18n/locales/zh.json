@@ -13,12 +13,16 @@
         "occupation_tags": "👨💻 数字内容创作者 {pipe} 🎑 乐观风月诗人 {pipe} 🎮 元宇宙探索者",
         "mission": "聚焦前沿科技与数字艺术融合，用代码构建虚拟世界的新次元",
         "subtitle": "筑基期，爱下棋，凡三十余载不赢，遂弃棋学诗，七年得一句， 皆哂之",
-        "nav_articles": "📚 数字文集",
-        "nav_gallery": "🎨 视觉图库",
-        "nav_share": "🚀 创意工坊",
-        "nav_arknights": "❤️ 粥批集批",
-        "nav_diary": "🕰️ 朝花夕拾",
-        "nav_voice": "TA•发声",
+        "nav": {
+            "articales": "数字文集",
+            "articalesDesc": "你见过一朵花的花苞状态，想象过它的所有的美好可能，所以再也无法忍受它早早的枯萎凋零",
+            "voice": "TA•发声",
+            "voiceDesc": "我该如何追问，最热烈青春",
+            "diary": "朝花夕拾",
+            "diaryDesc": "镜中载清辉，微凉如见我",
+            "share": "自由链接",
+            "shareDesc": "AB IMO PECTORE ALL IS WELL"
+        },
         "footer_target": "数字痕迹记忆不清协会 {pipe} 一个旨在延长生命社会意义长度的空想家协会",
         "weixin_mp_scan": "微信扫一扫"
     },

@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     },
     app: {
         head: {
-            
             title: 'Khufu Memory',
             meta: [
                 { name: 'description', content: '一个旨在延长生命社会意义长度的空想家协会' },
@@ -49,7 +48,7 @@ export default defineNuxtConfig({
             redirectOn: 'root' // recommended
         },
         defaultLocale: 'zh',
-        langDir: 'locales'
+        langDir: 'locales',
     },
     ssr: true,
 })
