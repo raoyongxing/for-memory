@@ -1,5 +1,5 @@
 <template>
-    <header class="fixed top-0 left-0 right-0 h-16 bg-white z-50">
+    <header class="fixed top-0 left-0 right-0 h-16 bg-white z-50 border-b border-border">
         <div class="container mx-auto px-4 md:px-6 h-full flex items-center justify-between">
             <div class="font-bold text-4xl text-primary">{{ $t('common.title') }}</div>
             <nav class="hidden md:flex space-x-8">
@@ -52,29 +52,6 @@
     <PortalFooter />
 </template>
 <style>
-@import 'tailwindcss/utilities';
-    @layer utilities {
-        .content-auto {
-            content-visibility: auto;
-        }
-        .text-balance {
-            text-wrap: balance;
-        }
-        .transition-color {
-            transition: color 0.3s ease;
-        }
-        .transition-border {
-            transition: border-color 0.3s ease;
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    }
-    
     /* 全局样式 */
     body {
         font-family: 'Inter', system-ui, sans-serif;
@@ -82,26 +59,14 @@
         background-color: #FFFFFF;
         line-height: 1.6;
     }
-    
-    /* 导航栏样式 */
-    .nav-link {
-        position: relative;
-    }
-    
-    .nav-link.active {
-        font-weight: 600;
-    }
-    
     /* 卡片样式 */
     .idea-card {
         border: 0.5px solid #EEEEEE;
         transition: border-color 0.3s ease;
     }
-    
     .idea-card:hover {
         border-color: #CCCCCC;
     }
-    
     /* 平滑滚动 */
     html {
         scroll-behavior: smooth;
