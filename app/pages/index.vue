@@ -1,5 +1,4 @@
 <template>
-    <PortalHeader />
     <main>
         <section id="home">
             <!-- 首屏宣言 -->
@@ -42,7 +41,6 @@
             </div>
         </section>
     </main>
-    <PortalFooter />
 </template>
 <script setup>
 
