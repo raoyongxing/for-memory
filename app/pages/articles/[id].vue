@@ -44,6 +44,7 @@
         curIndex.value = parseInt(newId || '0') || 0
     })
 
+    const localePath = useLocalePath()
 </script>
 
 <template>
@@ -54,11 +55,11 @@
                 <div class="flex items-center justify-between">
                     <!-- 返回按钮 -->
                     <NuxtLink 
-                        to="/articles/all" 
+                        :to="localePath('/articles/all')" 
                         class="flex items-center text-tertiary hover:text-primary transition-colors"
                     >
                         <Icon name="fa7-solid:arrow-left" class="mr-2" />
-                        返回列表
+                        {{ $t('articles.back_to') }}
                     </NuxtLink>
                     
                     <!-- 文章标题 -->
@@ -72,7 +73,7 @@
                             @click="count(-1)"
                             :disabled="curIndex === 0"
                             class="p-1 md:p-2 rounded-md border border-gray-700 hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                            title="上一篇文章"
+                            :title="$t('articles.prev_article')"
                         >
                             <Icon name="fa7-solid:chevron-left" />
                         </button>
@@ -80,7 +81,7 @@
                             @click="count(1)"
                             :disabled="curIndex === articles.length - 1"
                             class="p-1 md:p-2 rounded-md border border-gray-700 hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                            title="下一篇文章"
+                            :title="$t('articles.next_article')"
                         >
                             <Icon name="fa7-solid:chevron-right" />
                         </button>
@@ -126,14 +127,14 @@
                         hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                     >
                         <Icon name="fa7-solid:chevron-left" class="mr-1 md:mr-2" />
-                        上一篇文章
+                        {{ $t('articles.prev_article') }}
                     </button>
                     
                     <NuxtLink 
-                        to="/articles/all" 
+                        :to="localePath('/articles/all')" 
                         class="px-2 py-1 md:px-4 md:py-2 text-center rounded-md border border-gray-700 hover:border-primary transition-colors"
                     >
-                        返回列表
+                       {{ $t('articles.back_to') }}
                     </NuxtLink>
                     
                     <button 
@@ -143,7 +144,7 @@
                           md:px-4 md:py-2
                          hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                     >
-                        下一篇文章
+                        {{ $t('articles.next_article') }}
                         <Icon name="fa7-solid:chevron-right" class="ml-1 md:ml-2" />
                     </button>
                 </div>

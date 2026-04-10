@@ -44,10 +44,8 @@ function handleClick(index) {
 <template>
     <main class="container mx-auto px-4 py-16">
         <ul class='slider  rounded-md overflow-hidden'>
-            <li class='item' @click.stop="handleClick(index)" v-for="(item, index) in sectionRef" :key="item.url" :style="`background-image: url(${item.url})`">
-                <div class='content'>
-                    <p class='description'></p>
-                </div>
+            <li class='item' @click.stop="handleClick(index)" v-for="(item, index) in sectionRef" :key="item.id">
+                <img :src="item.url" :alt="item.alt" class="w-full h-full object-cover z-[-1] rounded-md cursor-pointer" />
             </li>
         </ul>
     </main>

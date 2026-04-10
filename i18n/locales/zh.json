@@ -26,12 +26,21 @@
             "diary": "朝花夕拾",
             "diaryDesc": "镜中载清辉，微凉如见我",
             "share": "自由链接",
-            "shareDesc": "AB IMO PECTORE ALL IS WELL"
+            "shareDesc": "AB IMO PECTORE ALL IS WELL",
+            "into": "进入"
         }
     },
     "voice": {
         "audio_previous": "上一首",
         "audio_next": "下一首",
         "audio_play_pause": "播放/暂停"
+    },
+    "articles": {
+        "abstract": "我忘了曾经的，胡乱的写着些什么，我知道，这不是我的记忆，它是我的臆想，我的神离，是我短暂生命抽取的血肉和相聚别离。",
+        "next_page": "下一页",
+        "prev_page": "上一页",
+        "back_to": "返回列表",
+        "prev_article": "上一篇文章",
+        "next_article": "下一篇文章"
     }
 }

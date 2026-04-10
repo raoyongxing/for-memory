@@ -26,12 +26,21 @@
             "diary": "Memories Revisited",
             "diaryDesc": "The moonlight embraced by the mirror,a chill that mirrors my soul.",
             "share": "Connect Someone",
-            "shareDesc": "AB IMO PECTORE ALL IS WELL"
+            "shareDesc": "AB IMO PECTORE ALL IS WELL",
+            "into": "Into"
         }
     },
     "voice": {
         "audio_previous": "Previous",
         "audio_next": "Next",
         "audio_play_pause": "Play/Pause"
+    },
+    "articles": {
+        "abstract": "I've forgotten what I once scribbled, and I know it's not my memory, but my imagination, my detachment, the flesh and blood drawn from my short life, the moments of togetherness and separation.",
+        "next_page": "Next",
+        "prev_page": "Previous",
+        "back_to": "Back to List",
+        "prev_article": "Previous",
+        "next_article": "Next"
     }
 }
