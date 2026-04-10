@@ -74,7 +74,7 @@ main {
     background-position: center;
     background-size: cover;
     border-radius: 10px;
-    box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7);
     transition: transform 0.1s, left 0.75s, bottom 0.75s, width 0.75s, height 0.75s;
 
     &:nth-child(1),
