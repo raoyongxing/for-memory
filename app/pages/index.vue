@@ -17,25 +17,25 @@
                         <h3 class="text-xl font-medium text-primary mb-3">{{ $t('index.nav.articales') }}</h3>
                         <p class="text-tertiary text-sm mb-4 line-clamp-3">{{ $t('index.nav.articalesDesc') }}</p>
                         <p class="text-lightgray text-xs">2025-01-15</p>
-                        <NuxtLinkLocale to="/articles/all" target="_blank" class="hidden group-hover:flex items-center justify-center w-1/3 h-full bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
+                        <NuxtLinkLocale to="/articles/all" class="hidden group-hover:flex items-center justify-center w-1/3 h-full bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
                     </div>
                     <div class="idea-card relative p-5 rounded-md cursor-pointer group overflow-hidden" data-id="2">
                         <h3 class="text-xl font-medium text-primary mb-3">{{ $t('index.nav.diary') }}</h3>
                         <p class="text-tertiary text-sm mb-4 line-clamp-3">{{ $t('index.nav.diaryDesc') }}</p>
                         <p class="text-lightgray text-xs">2025-01-15</p>
-                        <NuxtLinkLocale to="/diary" class="hidden group-hover:flex items-center justify-center w-1/3 h-full leaidng- bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
+                        <NuxtLinkLocale to="/diary" class="hidden group-hover:flex items-center justify-center w-1/3 h-full bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
                     </div>
                     <div class="idea-card relative p-5 rounded-md cursor-pointer group overflow-hidden" data-id="3">
                         <h3 class="text-xl font-medium text-primary mb-3">{{ $t('index.nav.voice') }}</h3>
                         <p class="text-tertiary text-sm mb-4 line-clamp-3">{{ $t('index.nav.voiceDesc') }}</p>
                         <p class="text-lightgray text-xs">2025-01-15</p>
-                        <NuxtLinkLocale to="/voice" class="hidden group-hover:flex items-center justify-center w-1/3 h-full leaidng- bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
+                        <NuxtLinkLocale to="/voice" class="hidden group-hover:flex items-center justify-center w-1/3 h-full bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
                     </div>
                     <div class="idea-card relative p-5 rounded-md cursor-pointer group overflow-hidden" data-id="4">
                         <h3 class="text-xl font-medium text-primary mb-3">{{ $t('index.nav.share') }}</h3>
                         <p class="text-tertiary text-sm mb-4 line-clamp-3">{{ $t('index.nav.shareDesc') }}</p>
                         <p class="text-lightgray text-xs">2025-01-15</p>
-                        <NuxtLinkLocale to="/share" class="hidden group-hover:flex items-center justify-center w-1/3 h-full leaidng- bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
+                        <NuxtLinkLocale to="/share" class="hidden group-hover:flex items-center justify-center w-1/3 h-full bg-gray-50 absolute right-0 top-0">进入</NuxtLinkLocale>
                     </div>
                 </div>
             </div>

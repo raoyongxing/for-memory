@@ -10,20 +10,19 @@ let timeline = reactive({
     rawTime: '00:00.00',
     rawMaxTime: '00:00.00',
 })
-let musicList = [
-    {
-        title: "词不达意",
-        audio: "/audio/M800002WZGG42rQgyW.mp3",
-        lrc: "/lrc/M800002WZGG42rQgyW.lrc"
-    },
-    {
-        title: "从前慢",
-        audio: "/audio/M800004XTtRH1S6UnO.mp3",
-        lrc: "/lrc/M800004XTtRH1S6UnO.lrc"
-    }
-]
+let musicList = ref([])
 let currentMusicIndex = ref(0)
-let currentMusic = ref(musicList[currentMusicIndex.value])
+let currentMusic = ref(null)
+const { data: jsonData , pending, error } = await useFetch("/audio/audio.json", {
+    baseURL: useRequestURL().origin
+})
+musicList.value = jsonData.value || []
+currentMusic.value = musicList.value[currentMusicIndex.value]
+
+
+if (error.value) {
+    console.error('获取音频列表失败:', error.value)
+}
 
 onMounted(async () => {
     loadLyrics()
@@ -46,21 +45,21 @@ async function loadLyrics() {
 
 function prevSong() {
     if (currentMusicIndex.value === 0) {
-        currentMusicIndex.value = musicList.length - 1
+        currentMusicIndex.value = musicList.value.length - 1
     } else {
         currentMusicIndex.value--
     }
-    currentMusic.value = musicList[currentMusicIndex.value]
+    currentMusic.value = musicList.value[currentMusicIndex.value]
     loadLyrics()
     loadAudio()
 }
 function nextSong() {
-    if (currentMusicIndex.value === musicList.length - 1) {
+    if (currentMusicIndex.value === musicList.value.length - 1) {
         currentMusicIndex.value = 0
     } else {
         currentMusicIndex.value++
     }
-    currentMusic.value = musicList[currentMusicIndex.value]
+    currentMusic.value = musicList.value[currentMusicIndex.value]
     loadLyrics()
     loadAudio()
 }
@@ -91,7 +90,7 @@ function switchToCurrentLyric() {
             if (currentLyricElement) {
                 currentLyricElement.scrollIntoView({
                     behavior: 'smooth',
-                    block: 'center'
+                    block: 'nearest'
                 })
             }
         })
@@ -132,7 +131,7 @@ function formatTime(seconds) {
         <div class="audio-control">
             <audio ref="audioRef" @timeupdate="updateCurrentTime" @loadedmetadata="setTotalTime"
                 class="song-item__audio">
-                <source :src="currentMusic.audio" type="audio/mpeg">
+                <source v-if="currentMusic" :src="currentMusic.audio" type="audio/mpeg">
             </audio>
             <div class="operations-container">
                 <button class="icon-button pre" @click="prevSong" :title="$t('voice.audio_previous')">
@@ -168,18 +167,29 @@ function formatTime(seconds) {
             </div>
             <div class="timeline-container">
                 <MusicProgress :timeline="timeline" style="flex: 1;" />
-                <span class="timeline-time">{{ timeline.rawTime }} / {{ timeline.rawMaxTime }}</span>
+                <span class="timeline-time ml-2 mt-2 text-sm">{{ timeline.rawTime }} / {{ timeline.rawMaxTime }}</span>
             </div>
         </div>
     </main>
 </template>
 <style scoped>
 .song-root {
-    color: rgba(255, 255, 255, 0.676);
+    color: rgba(15, 15, 15, 0.676);
+    position: relative;
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+    padding-bottom: 110px;
 }
+
 
 .song-item {
     text-align: center;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.song-item::-webkit-scrollbar {
+    display: none;
 }
 
 .song-item__title {
@@ -209,7 +219,7 @@ function formatTime(seconds) {
     font-weight: bold;
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #f4b60bb5;
 }
 
 .audio-control {
@@ -219,14 +229,14 @@ function formatTime(seconds) {
     justify-content: center;
     padding: 1rem;
 
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     /* border: 1px solid #ffffff92;
         box-shadow: 0 0 10px #ffffff92; */
 
-    background-color: #2c2a2a;
+    background-color: #f6f2f2;
 }
 
 .timeline-container {
@@ -269,7 +279,7 @@ function formatTime(seconds) {
 }
 
 .icon-button svg path {
-    fill: #fff;
+    fill: #353333;
 }
 
 .icon-button:hover svg path {
@@ -304,7 +314,6 @@ function formatTime(seconds) {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: linear-gradient(45deg, #000, #1a1a2e);
 }
 
 .ripple {

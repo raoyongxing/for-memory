@@ -45,9 +45,8 @@ function updateDot () {
 <template>
     <div class="player-progress">
         <div class="player-progress__inner">
-            <!-- <div class="player-progress__load"></div> -->
             <div class="player-progress__play">
-                <!-- <span class="player-progress__dot"></span> -->
+                <span class="player-progress__dot"></span>
             </div>
         </div>
     </div>
@@ -63,13 +62,15 @@ function updateDot () {
         position: relative;
         height: 2px;
         filter: progid:DXImageTransform.Microsoft.gradient(enabled="true",startColorstr="#19FFFFFF",endColorstr="#19FFFFFF");
-        background: hsla(0,0%,100%,.1)
+        background: #fff;
+
     }
 
     .player-progress__load {
         height: 2px;
         filter: progid:DXImageTransform.Microsoft.gradient(enabled="true",startColorstr="#33FFFFFF",endColorstr="#33FFFFFF");
-        background: hsla(0,0%,100%,.2)
+        background: #fff;
+
     }
 
     .player-progress__play {
@@ -78,7 +79,7 @@ function updateDot () {
         left: 0;
         height: 2px;
         filter: progid:DXImageTransform.Microsoft.gradient(enabled="true",startColorstr="#B2FFFFFF",endColorstr="#B2FFFFFF");
-        background: hsla(0,0%,100%,.7)
+        background: #f4b60b;
     }
 
     .player-progress__dot {
@@ -87,7 +88,7 @@ function updateDot () {
         right: -4px;
         width: 10px;
         height: 10px;
-        background-color: #fff;
+        background-color: #f4b60b;
         border-radius: 50%;
         background-position: 0 -170px;
         opacity: 1;

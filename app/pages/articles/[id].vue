@@ -4,15 +4,15 @@
 
     // 获取文章列表
     const articles = ref([])
-    fetch('/html/atricles.json')
-        .then(res => res.json())
-        .then(data => articles.value = data)
+    const { data: jsonData } = await useFetch('/html/atricles.json', {
+        baseURL: useRequestURL().origin
+    })
+    articles.value = jsonData.value || []
 
     let curIndex = ref(defaultIndex)
     function count(delta) {
         curIndex.value = Math.max(0, Math.min(articles.value.length - 1, curIndex.value + delta))
     }
-    
 
 
     // iframe的高度自适应
@@ -34,6 +34,7 @@
         resizeObserver.observe(iframeRef.value.contentWindow.document.documentElement);
     }
 
+    // TODO: 支持web视图，a4视图查看文章
     onMounted(() => {
         setIframeHeight()
     })

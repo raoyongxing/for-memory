@@ -1,10 +1,11 @@
 <script setup>
     const route = useRoute()
-    const articles = ref([])
-    fetch('/html/atricles.json')
-        .then(res => res.json())
-        .then(data => articles.value = data)
-
+    const { data: articles, error } = await useFetch('/html/atricles.json', {
+        baseURL: useRequestURL().origin
+    })
+    if (error.value) {
+        console.error('获取文章列表失败:', error.value)
+    }
 </script>
 <template>
     <div class="container mx-auto px-4 md:px-6 py-10 min-h-[75vh]">
