@@ -37,6 +37,11 @@ const shareList = ref([
                 title: "iconify",
                 desc: "All popular icon sets, one framework. Over 200,000 open source vector icons.",
                 url: "https://iconify.design/"
+            },
+            {
+                title: "爱听音乐网",
+                desc: "免费音乐文件及歌词lrc文件下载",
+                url: "https://www.2t58.com/"
             }
         ]
     },

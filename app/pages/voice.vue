@@ -90,7 +90,8 @@ function switchToCurrentLyric() {
             if (currentLyricElement) {
                 currentLyricElement.scrollIntoView({
                     behavior: 'smooth',
-                    block: 'nearest'
+                    block: 'center',
+                    container: "nearest"
                 })
             }
         })
@@ -133,37 +134,45 @@ function formatTime(seconds) {
                 class="song-item__audio">
                 <source v-if="currentMusic" :src="currentMusic.audio" type="audio/mpeg">
             </audio>
-            <div class="operations-container">
-                <button class="icon-button pre" @click="prevSong" :title="$t('voice.audio_previous')">
-                    <svg t="1767769160997" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" p-id="4713" width="24" height="24">
-                        <path
-                            d="M862.208 824.448a63.872 63.872 0 0 1-65.664-3.2l-384-256a64 64 0 0 1-0.064-106.496l384-256A64.021333 64.021333 0 0 1 896 256v512a64.106667 64.106667 0 0 1-33.792 56.448zM320 832H192c-35.392 0-64-28.608-64-64V256c0-35.392 28.608-64 64-64h128c35.392 0 64 28.608 64 64v512c0 35.392-28.608 64-64 64z"
-                            fill="" p-id="4714"></path>
-                    </svg>
-                </button>
-                <button class="icon-button play" @click="playPauseSong" :title="$t('voice.audio_play_pause')">
-                    <svg v-if="isPlaying" t="1767768728800" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" p-id="9603" width="24" height="24">
-                        <path
-                            d="M768 832h-128c-35.392 0-64-28.608-64-64V256c0-35.392 28.608-64 64-64h128c35.392 0 64 28.608 64 64v512c0 35.392-28.608 64-64 64z m-384 0h-128c-35.392 0-64-28.608-64-64V256c0-35.392 28.608-64 64-64h128c35.392 0 64 28.608 64 64v512c0 35.392-28.608 64-64 64z"
-                            fill="" p-id="9604"></path>
-                    </svg>
-                    <svg v-else t="1767768860843" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" p-id="4563" width="24" height="24">
-                        <path
-                            d="M256 832c-11.712 0-23.36-3.2-33.664-9.536A64.170667 64.170667 0 0 1 192 768V256c0-22.208 11.52-42.816 30.336-54.464a64.298667 64.298667 0 0 1 62.272-2.816l512 256a64.064 64.064 0 0 1 0 114.56l-512 256c-8.96 4.48-18.88 6.72-28.608 6.72z"
-                            fill="" p-id="4564"></path>
-                    </svg>
-                </button>
-                <button class="icon-button next" @click="nextSong" :title="$t('voice.audio_next')">
-                    <svg t="1767769160997" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" p-id="4713" width="24" height="24">
-                        <path
-                            d="M862.208 824.448a63.872 63.872 0 0 1-65.664-3.2l-384-256a64 64 0 0 1-0.064-106.496l384-256A64.021333 64.021333 0 0 1 896 256v512a64.106667 64.106667 0 0 1-33.792 56.448zM320 832H192c-35.392 0-64-28.608-64-64V256c0-35.392 28.608-64 64-64h128c35.392 0 64 28.608 64 64v512c0 35.392-28.608 64-64 64z"
-                            fill="" p-id="4714" transform="scale(-1,1) translate(-1024,0)"></path>
-                    </svg>
-                </button>
+            <div class="relative w-[80%] flex">
+                <div class="content-start">
+                    <div>
+                        <span class="font-bold">{{ currentMusic.title }}</span>
+                        <span class="ml-2">{{ currentMusic.author }}</span>
+                    </div>
+                </div>
+                <div class= "operations-container content-center">
+                    <button class="icon-button pre" @click="prevSong" :title="$t('voice.audio_previous')">
+                        <svg t="1767769160997" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="4713" width="24" height="24">
+                            <path
+                                d="M862.208 824.448a63.872 63.872 0 0 1-65.664-3.2l-384-256a64 64 0 0 1-0.064-106.496l384-256A64.021333 64.021333 0 0 1 896 256v512a64.106667 64.106667 0 0 1-33.792 56.448zM320 832H192c-35.392 0-64-28.608-64-64V256c0-35.392 28.608-64 64-64h128c35.392 0 64 28.608 64 64v512c0 35.392-28.608 64-64 64z"
+                                fill="" p-id="4714"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-button play" @click="playPauseSong" :title="$t('voice.audio_play_pause')">
+                        <svg v-if="isPlaying" t="1767768728800" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="9603" width="24" height="24">
+                            <path
+                                d="M768 832h-128c-35.392 0-64-28.608-64-64V256c0-35.392 28.608-64 64-64h128c35.392 0 64 28.608 64 64v512c0 35.392-28.608 64-64 64z m-384 0h-128c-35.392 0-64-28.608-64-64V256c0-35.392 28.608-64 64-64h128c35.392 0 64 28.608 64 64v512c0 35.392-28.608 64-64 64z"
+                                fill="" p-id="9604"></path>
+                        </svg>
+                        <svg v-else t="1767768860843" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="4563" width="24" height="24">
+                            <path
+                                d="M256 832c-11.712 0-23.36-3.2-33.664-9.536A64.170667 64.170667 0 0 1 192 768V256c0-22.208 11.52-42.816 30.336-54.464a64.298667 64.298667 0 0 1 62.272-2.816l512 256a64.064 64.064 0 0 1 0 114.56l-512 256c-8.96 4.48-18.88 6.72-28.608 6.72z"
+                                fill="" p-id="4564"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-button next" @click="nextSong" :title="$t('voice.audio_next')">
+                        <svg t="1767769160997" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="4713" width="24" height="24">
+                            <path
+                                d="M862.208 824.448a63.872 63.872 0 0 1-65.664-3.2l-384-256a64 64 0 0 1-0.064-106.496l384-256A64.021333 64.021333 0 0 1 896 256v512a64.106667 64.106667 0 0 1-33.792 56.448zM320 832H192c-35.392 0-64-28.608-64-64V256c0-35.392 28.608-64 64-64h128c35.392 0 64 28.608 64 64v512c0 35.392-28.608 64-64 64z"
+                                fill="" p-id="4714" transform="scale(-1,1) translate(-1024,0)"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
             <div class="timeline-container">
                 <MusicProgress :timeline="timeline" style="flex: 1;" />

@@ -76,6 +76,7 @@ main {
     border-radius: 10px;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7);
     transition: transform 0.1s, left 0.75s, bottom 0.75s, width 0.75s, height 0.75s;
+    filter: grayscale(.9);
 
     &:nth-child(1),
     &:nth-child(2) {

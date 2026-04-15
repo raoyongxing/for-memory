@@ -1,6 +1,6 @@
 <script setup>
     const route = useRoute()
-    const { data: articles, error } = await useFetch('/html/atricles.json', {
+    const { data: articles, error } = await useFetch('/html/articles.json', {
         baseURL: useRequestURL().origin
     })
     if (error.value) {

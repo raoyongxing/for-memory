@@ -6,6 +6,22 @@ export default defineNuxtConfig({
         host: "127.0.0.1",
         port: 3000
     },
+    nitro: {
+        routeRules: {
+            "/html/**": {
+                proxy: "https://khufuliver.com/html/**",
+                ssr: false
+            },
+            "/lrc/**": {
+                proxy: "https://khufuliver.com/lrc/**",
+                ssr: false
+            },
+            "/audio/**": {
+                proxy: "https://khufuliver.com/audio/**",
+                ssr: false
+            },
+        }
+    },
     app: {
         head: {
             title: 'Khufu Memory',

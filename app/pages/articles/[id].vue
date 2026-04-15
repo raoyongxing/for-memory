@@ -4,7 +4,7 @@
 
     // 获取文章列表
     const articles = ref([])
-    const { data: jsonData } = await useFetch('/html/atricles.json', {
+    const { data: jsonData } = await useFetch('/html/articles.json', {
         baseURL: useRequestURL().origin
     })
     articles.value = jsonData.value || []
@@ -106,10 +106,10 @@
                 </div>
 
                 <!-- 文章内容 -->
-                <div>
+                <div class="flex justify-center">
                     <iframe 
                         :src="articles[curIndex]?.src"
-                        class="w-full h-auto"
+                        class="h-auto w-[796px]"
                         @load="onListenIframe"
                         ref="iframeRef"
                         frameborder="0"
