@@ -20,6 +20,10 @@ export default defineNuxtConfig({
                 proxy: "https://khufuliver.com/audio/**",
                 ssr: false
             },
+            "/img/**": {
+                proxy: "https://khufuliver.com/img/**",
+                ssr: false
+            },
         }
     },
     app: {
