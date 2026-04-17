@@ -134,7 +134,7 @@ function formatTime(seconds) {
                 class="song-item__audio">
                 <source v-if="currentMusic" :src="currentMusic.audio" type="audio/mpeg">
             </audio>
-            <div class="relative w-[80%] flex">
+            <div class="relative md:w-[80%] flex justify-between md:justify-start">
                 <div class="content-start w-48 flex">
                     <img :src="currentMusic.thumb" class="h-12 w-12 inline-block"/>
                     <div class="ml-2">
@@ -146,7 +146,7 @@ function formatTime(seconds) {
                         </div>
                     </div>
                 </div>
-                <div class= "my-2 mx-auto relative -left-24">
+                <div class= "my-2 md:mx-auto md:-left-24 relative ">
                     <button class="icon-button pre" @click="prevSong" :title="$t('voice.audio_previous')">
                         <svg t="1767769160997" class="icon" viewBox="0 0 1024 1024" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" p-id="4713" width="24" height="24">
